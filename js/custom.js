@@ -159,7 +159,7 @@ $(function(){
 
 if(location.origin == 'https://qwazik.github.io'){
     $('body').append($('<script type="text/javascript" src="https://cdn.rawgit.com/Qwazik/scripts/master/navGit.js"></script>'));
-    $(window).load(function(){
+    $(window).on('load',function(){
         navGit({
             'Главная':'index.html',
             'Текстовая':'text.html',
