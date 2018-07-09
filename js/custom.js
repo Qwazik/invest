@@ -162,10 +162,9 @@ if(location.origin == 'https://qwazik.github.io'){
     $(window).load(function(){
         navGit({
             'Главная':'index.html',
-            'Кабинет':'cabinet.html',
-            'О компании':'about.html',
-            'Контакты':'contacts.html',
-            'Faq':'faq.html'
+            'Текстовая':'text.html',
+            'Галерея':'gallery.html',
+            'Контакты':'contacts.html'
         });
     });
 }
