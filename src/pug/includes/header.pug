@@ -1,0 +1,27 @@
+header.main-header
+	.container
+		.row
+			.col-xs-9
+				.d-table.w-100
+					.d-table-cell.va-middle
+						a(href="/").d-table.header-logo
+							.d-table-cell.va-middle.d-table: img(src="img/logo.png", alt="").mr-2
+							.d-table-cell.va-middle.ta-center.hidden-xs
+								<b>ИНВЕСТИЦИОННЫЙ ПОРТАЛ</b> <br> БРЯНСКОЙ ОБЛАСТИ
+					.d-table-cell.va-middle.header-map
+						a(href="#").d-table.ml-auto.mr-auto
+							.d-table-cell.va-middle
+								img(src="img/interactMap.png", alt="").mr-2
+							.d-table-cell.va-middle.ta-left
+								span Карта <br> Инвестиционных <br> площадок
+			.col-xs-3.ta-right.main-header__right
+				ul.header-flags
+					li.header-flags__item: a(href="#").icon.icon-en
+					li.header-flags__item: a(href="#").icon.icon-ru
+				a(href="#callbackForm").btn.btn--bd.fancybox.callback-btn.va-middle.d-inline-block
+					span.hidden-sm.hidden-xs Обратная связь
+					span.visible-sm.visible-xs: i.fa.fa-phone
+				button.responsive-nav-btn.va-middle.d-inline-block
+					span
+					span
+					span

@@ -1,0 +1,13 @@
+extends _template
+
+block main
+	.mb-6
+		include includes/main-nav
+	.container
+		.col-md-9.content-section.mb-4
+			.h.h-lg.ta-center.mb-4  Фотогалерея
+			include includes/gallary
+		aside.col-md-3
+			.h.h-md.mb-4 Рекомендуемые сайты:
+			include includes/rec-sites
+	include includes/main-nav

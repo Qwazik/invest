@@ -1,0 +1,51 @@
+extends _template
+
+block main
+	.mb-6
+		include includes/main-nav
+	.container.mb-6
+		.title.title--thin.mb-4 Контакты
+		.contacts-info
+			.contacts-info__item
+				.d-table
+					.d-table-cell.va-middle
+						.contacts-info__icon: i.fa.fa-phone
+					.d-table-cell.va-middle
+						.contacts-info__content: a(href="tel: +74832745855") 8 (4832) 74-58-55
+			.contacts-info__item
+				.d-table
+					.d-table-cell.va-middle
+						.contacts-info__icon: i.fa.fa-print
+					.d-table-cell.va-middle
+						.contacts-info__content 8 (4832) 74-07-26
+			.contacts-info__item
+				.d-table
+					.d-table-cell.va-middle
+						.contacts-info__icon: i.fa.fa-map-marker
+					.d-table-cell.va-middle
+						.contacts-info__content: a(href="https://yandex.ru/maps/191/bryansk/?ll=34.364898%2C53.240512&z=16&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fll%3D34.364907%252C53.240516%26spn%3D0.001000%252C0.001000%26text%3D%25D0%25A0%25D0%25BE%25D1%2581%25D1%2581%25D0%25B8%25D1%258F%252C%2520%25D0%2591%25D1%2580%25D1%258F%25D0%25BD%25D1%2581%25D0%25BA%252C%2520%25D1%2583%25D0%25BB%25D0%25B8%25D1%2586%25D0%25B0%2520%25D0%25A4%25D0%25BE%25D0%25BA%25D0%25B8%25D0%25BD%25D0%25B0%252C%252031%2520") 241050, г. Брянск, ул.Фокина, д.31
+			.contacts-info__item
+				.d-table
+					.d-table-cell.va-middle
+						.contacts-info__icon: i.fa.fa-envelope
+					.d-table-cell.va-middle
+						.contacts-info__content: a(href="mailto: agency@invest32.ru") agency@invest32.ru
+		.contacts-map.mb-4
+			iframe(src="https://yandex.ru/map-widget/v1/-/CBQdzMUjdD", frameborder="0")
+		.row
+			.col-md-4
+				.contact-person
+					.contact-person__status Директор
+					a(href="tel: +74832745855").contact-person__phone (4832) 74-58-55 
+					.contact-person__name Савичева Татьяна Сергеевна
+			.col-md-4
+				.contact-person
+					.contact-person__status ГЛАВНЫЙ БУХГАЛТЕР
+					a(href="tel: +74832740309").contact-person__phone (4832) 74-03-09
+					.contact-person__name Воловик Юлия Николаевна
+			.col-md-4
+				.contact-person
+					.contact-person__status ЗАМЕСТИТЕЛЬ ДИРЕКТОРА <br> <span class="title__nott">– начальник отдела по работе  <br> с инвесторами</span>
+					a(href="tel: +74832740726").contact-person__phone (4832) 74-07-26 
+					.contact-person__name Солуянов Дмитрий Геннадьевич
+	include includes/main-nav
