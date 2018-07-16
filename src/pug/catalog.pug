@@ -1,0 +1,267 @@
+extends _template
+
+block main
+	.catalog
+		.mb-6
+			include includes/main-nav
+		.container.mb-6
+			h2.title.title--thin.mb-4 Каталог 
+			.row
+				.col-md-12.mb-6
+					.search
+						.search__title Поиск
+						.search__input
+							input.input.input-bd(type="text")
+							.search__btn <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 16C12.4183 16 16 12.4183 16 8C16 3.58172 12.4183 0 8 0C3.58172 0 0 3.58172 0 8C0 12.4183 3.58172 16 8 16Z" transform="translate(1 1)" stroke="black" stroke-opacity="0.54" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.35 4.35L0 0" transform="translate(14.6499 14.65)" stroke="black" stroke-opacity="0.54" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+					.d-inline-table
+						.d-table-cell.va-middle.pr-1 Муниципальный район
+						.d-table-cell.va-middle 
+							select.js-select
+								option(value="1") llfds
+								option(value="2") llfds
+								option(value="3") llfds
+				.col-md-3
+					.catalog-filter
+						.catalog-filter__btn.active Площадки
+						.catalog-filter__section
+							.catalog-filter__row
+								.catalog-filter-section__title Площадь участка (Га)
+								.d-table.input-tripple
+									.d-table-cell.va-middle: input(type="text" placeholder="От").input.input-bd
+									.d-table-cell.va-middle - 
+									.d-table-cell.va-middle: input(type="text" placeholder="До").input.input-bd
+							.catalog-filter__row
+								.catalog-filter-section__title Площадь участка (Га)
+								.d-table.input-tripple
+									.d-table-cell.va-middle: input(type="text" placeholder="От").input.input-bd
+									.d-table-cell.va-middle - 
+									.d-table-cell.va-middle: input(type="text" placeholder="До").input.input-bd
+							.catalog-filter__row
+								.catalog-filter-section__title Площадь сооружения (кв.м) 
+								label.input-box.mb-2
+									.input-box__checkbox
+										.checkbox
+											input(type="checkbox").checkbox__input
+											span.checkbox__icon
+									.input-box__title Газ
+								label.input-box.mb-2
+									.input-box__checkbox
+										.checkbox
+											input(type="checkbox").checkbox__input
+											span.checkbox__icon
+									.input-box__title Пар
+								label.input-box.mb-2
+									.input-box__checkbox
+										.checkbox
+											input(type="checkbox").checkbox__input
+											span.checkbox__icon
+									.input-box__title Водоснабжение
+								label.input-box.mb-2
+									.input-box__checkbox
+										.checkbox
+											input(type="checkbox").checkbox__input
+											span.checkbox__icon
+									.input-box__title Очистные сооружения
+								label.input-box.mb-2
+									.input-box__checkbox
+										.checkbox
+											input(type="checkbox").checkbox__input
+											span.checkbox__icon
+									.input-box__title Отопление
+								label.input-box.mb-2
+									.input-box__checkbox
+										.checkbox
+											input(type="checkbox").checkbox__input
+											span.checkbox__icon
+									.input-box__title Электроэнергия
+								label.input-box.mb-2
+									.input-box__checkbox
+										.checkbox
+											input(type="checkbox").checkbox__input
+											span.checkbox__icon
+									.input-box__title Канализация
+								.input-box.mb-2
+									.input-box__input
+										input.input.input-bd(type="text" placeholder="км")
+									.input-box__title До автомагистрали
+							.catalog-filter__row
+								.catalog-filter-section__title Форма владения
+								select.js-select
+									option(value="")
+									option(value="")
+									option(value="")
+						.catalog-filter__btn Проекты
+						.catalog-filter__section
+						.catalog-filter__btn Площадки
+						.catalog-filter__section
+						.catalog-filter__btn.active Проекты
+
+						.catalog-filter__section
+							.catalog-filter__row
+								.catalog-filter-section__title Отрасль 
+								select.js-select
+									option(value="")
+									option(value="")
+									option(value="")
+							.catalog-filter__row
+								.catalog-filter-section__title Тип продукции 
+								select.js-select
+									option(value="")
+									option(value="")
+									option(value="")
+							.catalog-filter__row
+								.catalog-filter-section__title Стадия реализации 
+								select.js-select
+									option(value="")
+									option(value="")
+									option(value="")
+							.catalog-filter__row
+								.catalog-filter-section__title Общая стоимость (тыс. руб.) 
+								.d-table.input-tripple
+									.d-table-cell.va-middle: input(type="text" placeholder="От").input.input-bd
+									.d-table-cell.va-middle - 
+									.d-table-cell.va-middle: input(type="text" placeholder="До").input.input-bd
+						.catalog-filter__btn Предложения
+						.catalog-filter__section
+						.catalog-filter__btn Все
+						.catalog-filter__section
+
+				.col-md-9
+					.catalog
+						.catalog-item
+							.catalog-item__image(style="background-image: url(img/755187818413381.jpg)")
+							.catalog-item__content
+								.catalog-item__name Проект называется так
+								.catalog-item__info
+									span.catalog-item__prop Стоимость 2 000 000 рублей
+									span.catalog-item__addr Улица Горького, дом 2
+									span.catalog-item__done Реализовано
+									span.catalog-item__prop Площадь 130га 
+								.catalog-item__text 
+									p Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. 
+									p Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. 
+								.catalog-item__btns
+									.btn.btn--primary Подробнее
+									.btn.btn--primary Скачать
+						.catalog-item
+							.catalog-item__image(style="background-image: url(img/755187818413381.jpg)")
+							.catalog-item__content
+								.catalog-item__name Проект называется так
+								.catalog-item__info
+									span.catalog-item__prop Стоимость 2 000 000 рублей
+									span.catalog-item__addr Улица Горького, дом 2
+									span.catalog-item__done Реализовано
+									span.catalog-item__prop Площадь 130га 
+								.catalog-item__text 
+									p Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. 
+									p Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. 
+								.catalog-item__btns
+									.btn.btn--primary Подробнее
+									.btn.btn--primary Скачать
+						.catalog-item
+							.catalog-item__image(style="background-image: url(img/755187818413381.jpg)")
+							.catalog-item__content
+								.catalog-item__name Проект называется так
+								.catalog-item__info
+									span.catalog-item__prop Стоимость 2 000 000 рублей
+									span.catalog-item__addr Улица Горького, дом 2
+									span.catalog-item__done Реализовано
+									span.catalog-item__prop Площадь 130га 
+								.catalog-item__text 
+									p Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. 
+									p Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. 
+								.catalog-item__btns
+									.btn.btn--primary Подробнее
+									.btn.btn--primary Скачать
+						.catalog-item
+							.catalog-item__image(style="background-image: url(img/755187818413381.jpg)")
+							.catalog-item__content
+								.catalog-item__name Проект называется так
+								.catalog-item__info
+									span.catalog-item__prop Стоимость 2 000 000 рублей
+									span.catalog-item__addr Улица Горького, дом 2
+									span.catalog-item__done Реализовано
+									span.catalog-item__prop Площадь 130га 
+								.catalog-item__text 
+									p Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. 
+									p Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. 
+								.catalog-item__btns
+									.btn.btn--primary Подробнее
+									.btn.btn--primary Скачать
+						.catalog-item
+							.catalog-item__image(style="background-image: url(img/755187818413381.jpg)")
+							.catalog-item__content
+								.catalog-item__name Проект называется так
+								.catalog-item__info
+									span.catalog-item__prop Стоимость 2 000 000 рублей
+									span.catalog-item__addr Улица Горького, дом 2
+									span.catalog-item__done Реализовано
+									span.catalog-item__prop Площадь 130га 
+								.catalog-item__text 
+									p Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. 
+									p Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. 
+								.catalog-item__btns
+									.btn.btn--primary Подробнее
+									.btn.btn--primary Скачать
+						.catalog-item
+							.catalog-item__image(style="background-image: url(img/755187818413381.jpg)")
+							.catalog-item__content
+								.catalog-item__name Проект называется так
+								.catalog-item__info
+									span.catalog-item__prop Стоимость 2 000 000 рублей
+									span.catalog-item__addr Улица Горького, дом 2
+									span.catalog-item__done Реализовано
+									span.catalog-item__prop Площадь 130га 
+								.catalog-item__text 
+									p Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. 
+									p Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. 
+								.catalog-item__btns
+									.btn.btn--primary Подробнее
+									.btn.btn--primary Скачать
+						.catalog-item
+							.catalog-item__image(style="background-image: url(img/755187818413381.jpg)")
+							.catalog-item__content
+								.catalog-item__name Проект называется так
+								.catalog-item__info
+									span.catalog-item__prop Стоимость 2 000 000 рублей
+									span.catalog-item__addr Улица Горького, дом 2
+									span.catalog-item__done Реализовано
+									span.catalog-item__prop Площадь 130га 
+								.catalog-item__text 
+									p Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. 
+									p Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. 
+								.catalog-item__btns
+									.btn.btn--primary Подробнее
+									.btn.btn--primary Скачать
+						.catalog-item
+							.catalog-item__image(style="background-image: url(img/755187818413381.jpg)")
+							.catalog-item__content
+								.catalog-item__name Проект называется так
+								.catalog-item__info
+									span.catalog-item__prop Стоимость 2 000 000 рублей
+									span.catalog-item__addr Улица Горького, дом 2
+									span.catalog-item__done Реализовано
+									span.catalog-item__prop Площадь 130га 
+								.catalog-item__text 
+									p Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. 
+									p Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. 
+								.catalog-item__btns
+									.btn.btn--primary Подробнее
+									.btn.btn--primary Скачать
+						.catalog-item
+							.catalog-item__image(style="background-image: url(img/755187818413381.jpg)")
+							.catalog-item__content
+								.catalog-item__name Проект называется так
+								.catalog-item__info
+									span.catalog-item__prop Стоимость 2 000 000 рублей
+									span.catalog-item__addr Улица Горького, дом 2
+									span.catalog-item__done Реализовано
+									span.catalog-item__prop Площадь 130га 
+								.catalog-item__text 
+									p Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. 
+									p Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. 
+								.catalog-item__btns
+									.btn.btn--primary Подробнее
+									.btn.btn--primary Скачать
+	include includes/main-nav

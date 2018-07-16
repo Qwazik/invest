@@ -90,13 +90,427 @@ footer.main-footer
 							a(href="#") Полезные ссылки
 .modals
 	.modal.modal-thin#callbackForm
-		form(action="#")
+		form(action="#").modal-form
 			.modal-header
 				.title Обратная связь
 			.modal-body
-				input(type="text" placeholder="Ваше имя").input.input-bd.mb-2
-				input(type="text" placeholder="Ваш email").input.input-bd.mb-2
+				input(type="text" placeholder="Ф.И.О.").input.input-bd.mb-2
+				input(type="tel" placeholder="Телефон").input.input-bd.mb-2
 				textarea(placeholder="Сообщение").textarea.textarea-bd.mb-2
 			.modal-footer.ta-center
-				button(type="submit").btn.btn--bd.modal__btn Отправить сообщение
-				a(href="#").modal-agree Перед отправкой сообщения ознакомьтесь с правилами обработки персональных данных
+				button(type="submit").btn.btn--primary.modal__btn Отправить
+				.modal-agree Нажимая кнопку «Отправить» вы даете свое <br> согласие на обработку <a href="#">персональных данных.</a>
+	.modal.modal-thin#consultForm
+		form(action="#").modal-form
+			.modal-header
+				.title Консультация
+			.modal-body
+				input(type="text" placeholder="Ф.И.О.").input.input-bd.mb-2
+				input(type="text" placeholder="Телефон").input.input-bd.mb-2
+				input(type="text" placeholder="Почта").input.input-bd.mb-2
+				textarea(placeholder="Сообщение").textarea.textarea-bd.mb-2 
+			.modal-footer.ta-center
+				button(type="submit").btn.btn--primary.modal__btn Отправить
+				.modal-agree Нажимая кнопку «Отправить» вы даете свое <br> согласие на обработку <a href="#">персональных данных.</a>
+	.modal#razmForm
+		form(action="#").modal-form
+			.modal-header
+				.title Заявка на размещение <span>производства/предприятия</span>
+			.modal-body
+				.row
+					.col-md-6
+						input(type="text" placeholder="Ф.И.О.").input.input-bd.mb-2
+						input(type="tel" placeholder="Наименование организации ").input.input-bd.mb-2
+					.col-md-6
+						input(type="text" placeholder="Телефон").input.input-bd.mb-2
+						label.download.mb-2
+							input(type="file")
+							.download__text Загрузить документы
+							.download__btn.btn.btn--shadow 
+								<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M18 0V4C18 4.53043 17.7893 5.03914 17.4142 5.41421C17.0391 5.78929 16.5304 6 16 6H2C1.46957 6 0.960859 5.78929 0.585786 5.41421C0.210714 5.03914 0 4.53043 0 4V0" transform="translate(1 13)" stroke="#1B2F36" stroke-linecap="round" stroke-linejoin="round"/>
+								<path d="M0 0L5 5L10 0" transform="translate(5 8)" stroke="#1B2F36" stroke-linecap="round" stroke-linejoin="round"/>
+								<path d="M0 12V0" transform="translate(10 1)" stroke="#1B2F36" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+				.row
+					.col-md-6
+						input(type="text" placeholder="Вид производства").input.input-bd.mb-2
+					.col-md-6
+						input(type="text" placeholder="Отрасль производства").input.input-bd.mb-2
+				.row
+					.col-md-6
+						.btn.btn--shadow.show-add-params Все параметры
+					.col-md-6
+						.mb-2 Предоставьте дополнительную <br> информацию
+				.add-params
+					.row
+						.col-md-6
+							input(type="text" placeholder="ОГРН").input.input-bd.mb-2
+						.col-md-6
+							input(type="text" placeholder="ИНН").input.input-bd.mb-2
+					.row
+						.col-md-6
+							input(type="email" placeholder="Почта").input.input-bd.mb-2
+						.col-md-6
+							input(type="text" placeholder="Адрес").input.input-bd.mb-2
+					.row
+						.col-md-6
+							input(type="text" placeholder="Сумма инвестиций").input.input-bd.mb-2
+						.col-md-6
+							input(type="text" placeholder="Источник средств").input.input-bd.mb-2
+					.row
+						.col-md-6.mb-2
+							select.js-select
+								option(value="1") Тип площадки
+								option(value="2") lalala
+								option(value="3") lalala
+						.col-md-6.mb-2
+							select.js-select
+								option(value="1") Форма владения
+								option(value="2") lalala
+								option(value="3") lalala
+					.row
+						.col-md-6.mb-2
+							label.input-box
+								.input-box__input
+									input(type="text" placeholder="га").input.input-bd
+								.input-box__title Площадь участка
+						.col-md-6.mb-2
+							label.input-box
+								.input-box__input
+									input(type="text" placeholder="кв.м").input.input-bd
+								.input-box__title Площадь сооружений <br> <span>при наличии</span>
+					.modal-title Инфраструктура
+					.row
+						.col-md-6.mb-2
+							label.input-box
+								.input-box__input
+									input(type="text" placeholder="куб. м/час").input.input-bd
+								.input-box__title Газ
+						.col-md-6.mb-2
+							label.input-box
+								.input-box__input
+									input(type="text" placeholder="Гкал/час").input.input-bd
+								.input-box__title Отопление
+					.row
+						.col-md-6.mb-2
+							label.input-box
+								.input-box__input
+									input(type="text" placeholder="Бар").input.input-bd
+								.input-box__title Пар
+						.col-md-6.mb-2
+							label.input-box
+								.input-box__input
+									input(type="text" placeholder="кВт").input.input-bd
+								.input-box__title Электроэнергия
+					.row
+						.col-md-6.mb-2
+							label.input-box
+								.input-box__input
+									input(type="text" placeholder="куб. м/год").input.input-bd
+								.input-box__title Водоснабжение
+						.col-md-6.mb-2
+							label.input-box
+								.input-box__input
+									input(type="text" placeholder="куб. м/год").input.input-bd
+								.input-box__title Канализация
+					.row
+						.col-md-6.mb-2
+							label.input-box
+								.input-box__input
+									input(type="text" placeholder="куб. м/год").input.input-bd
+								.input-box__title Очистные сооружения
+						.col-md-6.mb-2
+							label.input-box
+								.input-box__checkbox
+									.checkbox
+										input(type="checkbox").checkbox__input
+										span.checkbox__icon
+								.input-box__title Наличие ЖД путей
+					.row
+						.col-md-6.mb-2
+							input.input(type="text" placeholder="Ближайший город").input-bd
+						.col-md-6.mb-2
+							label.input-box
+								.input-box__input
+									input(type="text" placeholder="км").input.input-bd
+								.input-box__title Расстояние до города
+					.row
+						.col-md-6.mb-2
+							label.input-box
+								.input-box__input
+									input(type="text" placeholder="км").input.input-bd
+								.input-box__title Расстояние до магистрали
+					.modal-title Дополнительно
+					.row
+						.col-md-6.mb-2
+							label.input-box
+								.input-box__checkbox
+									.checkbox
+										input(type="checkbox").checkbox__input
+										span.checkbox__icon
+								.input-box__title Возможность расширения
+						.col-md-6.mb-2
+							label.input-box
+								.input-box__checkbox
+									.checkbox
+										input(type="checkbox").checkbox__input
+										span.checkbox__icon
+								.input-box__title Наличие ограждений
+			.modal-footer.ta-center
+				.row
+					.col-md-6
+						button(type="submit").btn.btn--primary.modal__btn Отправить
+					.col-md-6.ta-left
+						.modal-agree Нажимая кнопку «Отправить» вы даете свое <br> согласие на обработку <a href="#">персональных данных.</a>
+	.modal#investForm
+		form(action="#").modal-form
+			.modal-header
+				.title Требуется <span>инвестиционная площадка</span>
+			.modal-body
+				.row
+					.col-md-6
+						input(type="text" placeholder="Ф.И.О.").input.input-bd.mb-2
+					.col-md-6
+						input(type="text" placeholder="Телефон").input.input-bd.mb-2
+				.row
+					.col-md-6
+						input(type="text" placeholder="Почта").input.input-bd.mb-2
+				.row
+					.col-md-6.mb-2
+						select.js-select
+							option(value="1") Район
+							option(value="2") lalala
+							option(value="3") lalala
+					.col-md-6.mb-2
+						select.js-select
+							option(value="1") Тип площадки
+							option(value="2") lalala
+							option(value="3") lalala
+				.modal-title Инфраструктура
+				.row
+					.col-md-6.mb-2
+						label.input-box
+							.input-box__checkbox
+								.checkbox
+									input(type="checkbox").checkbox__input
+									span.checkbox__icon
+							.input-box__title Газ
+					.col-md-6.mb-2
+						label.input-box
+							.input-box__checkbox
+								.checkbox
+									input(type="checkbox").checkbox__input
+									span.checkbox__icon
+							.input-box__title Отопление
+				.row
+					.col-md-6.mb-2
+						label.input-box
+							.input-box__checkbox
+								.checkbox
+									input(type="checkbox").checkbox__input
+									span.checkbox__icon
+							.input-box__title Пар
+					.col-md-6.mb-2
+						label.input-box
+							.input-box__checkbox
+								.checkbox
+									input(type="checkbox").checkbox__input
+									span.checkbox__icon
+							.input-box__title Электроэнергия
+				.row
+					.col-md-6.mb-2
+						label.input-box
+							.input-box__checkbox
+								.checkbox
+									input(type="checkbox").checkbox__input
+									span.checkbox__icon
+							.input-box__title Водоснабжение
+					.col-md-6.mb-2
+						label.input-box
+							.input-box__checkbox
+								.checkbox
+									input(type="checkbox").checkbox__input
+									span.checkbox__icon
+							.input-box__title Канализация
+				.row
+					.col-md-6.mb-2
+						label.input-box
+							.input-box__checkbox
+								.checkbox
+									input(type="checkbox").checkbox__input
+									span.checkbox__icon
+							.input-box__title Очистные сооружения
+					.col-md-6.mb-2
+						.input-box
+							.input-box__input
+								input.input.input-bd(type="text" placeholder="км")
+							.input-box__title До автомагистрали
+				.modal-title Дополнительно
+				.row
+					.col-md-6.mb-2
+						label.input-box
+							.input-box__checkbox
+								.checkbox
+									input(type="checkbox").checkbox__input
+									span.checkbox__icon
+							.input-box__title Возможность расширения
+					.col-md-6.mb-2
+						label.download
+							input(type="file")
+							.download__text Загрузить документы
+							.download__btn.btn.btn--shadow 
+								<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M18 0V4C18 4.53043 17.7893 5.03914 17.4142 5.41421C17.0391 5.78929 16.5304 6 16 6H2C1.46957 6 0.960859 5.78929 0.585786 5.41421C0.210714 5.03914 0 4.53043 0 4V0" transform="translate(1 13)" stroke="#1B2F36" stroke-linecap="round" stroke-linejoin="round"/>
+								<path d="M0 0L5 5L10 0" transform="translate(5 8)" stroke="#1B2F36" stroke-linecap="round" stroke-linejoin="round"/>
+								<path d="M0 12V0" transform="translate(10 1)" stroke="#1B2F36" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+					.col-md-12.mb-2
+						textarea.textarea.textarea-bd(placeholder="Дополнительные условия")
+			.modal-footer.ta-center
+				.row
+					.col-md-6
+						button(type="submit").btn.btn--primary.modal__btn Отправить
+					.col-md-6.ta-left
+						.modal-agree Нажимая кнопку «Отправить» вы даете свое <br> согласие на обработку <a href="#">персональных данных.</a>
+	.modal#predlForm
+		form(action="#").modal-form
+			.modal-header
+				.title Предложить <span>инвестиционную площадку</span>
+			.modal-body
+				.row
+					.col-md-6
+						input(type="text" placeholder="Ф.И.О.").input.input-bd.mb-2
+					.col-md-6
+						input(type="text" placeholder="Телефон").input.input-bd.mb-2
+				.row
+					.col-md-6
+						input(type="text" placeholder="Почта").input.input-bd.mb-2
+					.col-md-6
+						input(type="text" placeholder="Адрес площадки ").input.input-bd.mb-2
+				.row
+					.col-md-6.mb-2
+						select.js-select
+							option(value="1") Тип площадки
+							option(value="2") lalala
+							option(value="3") lalala
+					.col-md-6.mb-2
+						select.js-select
+							option(value="1") Форма владения
+							option(value="2") lalala
+							option(value="3") lalala
+				.row
+					.col-md-6.mb-2
+						label.input-box
+							.input-box__input
+								input(type="text" placeholder="га").input.input-bd
+							.input-box__title Площадь участка
+					.col-md-6.mb-2
+						label.input-box
+							.input-box__input
+								input(type="text" placeholder="кв.м").input.input-bd
+							.input-box__title Площадь сооружений <br> <span>при наличии</span>
+				.modal-title Инфраструктура
+				.row
+					.col-md-6.mb-2
+						label.input-box
+							.input-box__input
+								input(type="text" placeholder="куб. м/час").input.input-bd
+							.input-box__title Газ
+					.col-md-6.mb-2
+						label.input-box
+							.input-box__input
+								input(type="text" placeholder="Гкал/час").input.input-bd
+							.input-box__title Отопление
+				.row
+					.col-md-6.mb-2
+						label.input-box
+							.input-box__input
+								input(type="text" placeholder="Бар").input.input-bd
+							.input-box__title Пар
+					.col-md-6.mb-2
+						label.input-box
+							.input-box__input
+								input(type="text" placeholder="кВт").input.input-bd
+							.input-box__title Электроэнергия
+				.row
+					.col-md-6.mb-2
+						label.input-box
+							.input-box__input
+								input(type="text" placeholder="куб. м/год").input.input-bd
+							.input-box__title Водоснабжение
+					.col-md-6.mb-2
+						label.input-box
+							.input-box__input
+								input(type="text" placeholder="куб. м/год").input.input-bd
+							.input-box__title Канализация
+				.row
+					.col-md-6.mb-2
+						label.input-box
+							.input-box__input
+								input(type="text" placeholder="куб. м/год").input.input-bd
+							.input-box__title Очистные сооружения
+					.col-md-6.mb-2
+						label.input-box
+							.input-box__checkbox
+								.checkbox
+									input(type="checkbox").checkbox__input
+									span.checkbox__icon
+							.input-box__title Наличие ЖД путей
+				.row
+					.col-md-6.mb-2
+						input.input(type="text" placeholder="Ближайший город").input-bd
+					.col-md-6.mb-2
+						label.input-box
+							.input-box__input
+								input(type="text" placeholder="км").input.input-bd
+							.input-box__title Расстояние до города
+				.row
+					.col-md-6.mb-2
+						label.input-box
+							.input-box__input
+								input(type="text" placeholder="км").input.input-bd
+							.input-box__title Расстояние до магистрали
+				.modal-title Дополнительно
+				.row
+					.col-md-6.mb-2
+						label.input-box
+							.input-box__checkbox
+								.checkbox
+									input(type="checkbox").checkbox__input
+									span.checkbox__icon
+							.input-box__title Возможность расширения
+					.col-md-6.mb-2
+						label.input-box
+							.input-box__checkbox
+								.checkbox
+									input(type="checkbox").checkbox__input
+									span.checkbox__icon
+							.input-box__title Наличие ограждений
+					.col-md-6.mb-2
+						label.download
+							input(type="file")
+							.download__text Загрузить документы
+							.download__btn.btn.btn--shadow 
+								<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M18 0V4C18 4.53043 17.7893 5.03914 17.4142 5.41421C17.0391 5.78929 16.5304 6 16 6H2C1.46957 6 0.960859 5.78929 0.585786 5.41421C0.210714 5.03914 0 4.53043 0 4V0" transform="translate(1 13)" stroke="#1B2F36" stroke-linecap="round" stroke-linejoin="round"/>
+								<path d="M0 0L5 5L10 0" transform="translate(5 8)" stroke="#1B2F36" stroke-linecap="round" stroke-linejoin="round"/>
+								<path d="M0 12V0" transform="translate(10 1)" stroke="#1B2F36" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+			.modal-footer.ta-center
+				.row
+					.col-md-6
+						button(type="submit").btn.btn--primary.modal__btn Отправить
+					.col-md-6.ta-left
+						.modal-agree Нажимая кнопку «Отправить» вы даете свое <br> согласие на обработку <a href="#">персональных данных.</a>
+.popups-nav.disable
+	.popups-nav__toggler
+	.popups-nav__list
+		.popups-nav__item
+			a(href="#consultForm").btn.btn--primary.fancybox Получить консультацию
+		.popups-nav__item
+			a(href="#razmForm").btn.btn--primary.fancybox Размещение производства/предприятия
+		.popups-nav__item
+			a(href="#predlForm").btn.btn--primary.fancybox Предложить инвестиционную площадку
+		.popups-nav__item
+			a(href="#investForm").btn.btn--primary.fancybox Требуется инвестиционная площадка
