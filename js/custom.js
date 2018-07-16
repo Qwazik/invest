@@ -99,7 +99,7 @@ $(function(){
 	if($(DOM.jsSelect).length) initSelect(DOM.jsSelect);
 	if($(DOM.catalogFilterBtn).length) $(DOM.catalogFilterBtn).click(function(){
 		$(this).toggleClass('active').next().slideToggle();
-	});
+	}).click();
 
 	function initSelect(selector){
 		$(selector).select2({
