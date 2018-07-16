@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="libs/owl.carousel/dist/assets/owl.carousel.min.css">
   <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.css">
   <link rel="stylesheet" href="libs/fancybox/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="libs/select2/dist/css/select2.min.css">
   <link rel="stylesheet" href="css/bootstrap-grid.css">
   <link rel="stylesheet" href="css/style.css">
   <body><!--[if lt IE 9]>
@@ -25,7 +26,7 @@
               <div class="d-table w-100">
                 <div class="d-table-cell va-middle"><a class="d-table header-logo" href="/">
                     <div class="d-table-cell va-middle d-table"><img class="mr-2" src="img/logo.png" alt=""></div>
-                    <div class="d-table-cell va-middle ta-center hidden-xs"><b>ИНВЕСТИЦИОННЫЙ ПОРТАЛ</b> <br> БРЯНСКОЙ ОБЛАСТИ</div></a></div>
+                    <h1 class="d-table-cell va-middle ta-center hidden-xs"><b>ИНВЕСТИЦИОННЫЙ ПОРТАЛ</b> <br> БРЯНСКОЙ ОБЛАСТИ</h1></a></div>
                 <div class="d-table-cell va-middle header-map"><a class="d-table ml-auto mr-auto" href="#">
                     <div class="d-table-cell va-middle"><img class="mr-2" src="img/interactMap.png" alt=""></div>
                     <div class="d-table-cell va-middle ta-left"><span>Карта <br> Инвестиционных <br> площадок</span></div></a></div>
@@ -33,8 +34,8 @@
             </div>
             <div class="col-xs-3 ta-right main-header__right">
               <ul class="header-flags">
-                <li class="header-flags__item"><a class="icon icon-en" href="#"></a></li>
                 <li class="header-flags__item"><a class="icon icon-ru" href="#"></a></li>
+                <li class="header-flags__item"><a class="icon icon-en" href="#"></a></li>
               </ul><a class="btn btn--bd fancybox callback-btn va-middle d-inline-block" href="#callbackForm"><span class="hidden-sm hidden-xs">Обратная связь</span><span class="visible-sm visible-xs"><i class="fa fa-phone"></i></span></a>
               <button class="responsive-nav-btn va-middle d-inline-block"><span></span><span></span><span></span></button>
             </div>
@@ -103,7 +104,7 @@
         </nav>
       </div>
       <div class="container mb-6">
-        <div class="title title--thin mb-4">Контакты</div>
+        <h2 class="title title--thin mb-4">Контакты</h2>
         <div class="contacts-info">
           <div class="contacts-info__item">
             <div class="d-table">
@@ -309,25 +310,656 @@
       </footer>
       <div class="modals">
         <div class="modal modal-thin" id="callbackForm">
-          <form action="#">
+          <form class="modal-form" action="#">
             <div class="modal-header">
               <div class="title">Обратная связь</div>
             </div>
             <div class="modal-body">
-              <input class="input input-bd mb-2" type="text" placeholder="Ваше имя">
-              <input class="input input-bd mb-2" type="text" placeholder="Ваш email">
+              <input class="input input-bd mb-2" type="text" placeholder="Ф.И.О.">
+              <input class="input input-bd mb-2" type="tel" placeholder="Телефон">
               <textarea class="textarea textarea-bd mb-2" placeholder="Сообщение"></textarea>
             </div>
             <div class="modal-footer ta-center">
-              <button class="btn btn--bd modal__btn" type="submit">Отправить сообщение</button><a class="modal-agree" href="#">Перед отправкой сообщения ознакомьтесь с правилами обработки персональных данных</a>
+              <button class="btn btn--primary modal__btn" type="submit">Отправить</button>
+              <div class="modal-agree">Нажимая кнопку «Отправить» вы даете свое <br> согласие на обработку <a href="#">персональных данных.</a></div>
             </div>
           </form>
+        </div>
+        <div class="modal modal-thin" id="consultForm">
+          <form class="modal-form" action="#">
+            <div class="modal-header">
+              <div class="title">Консультация</div>
+            </div>
+            <div class="modal-body">
+              <input class="input input-bd mb-2" type="text" placeholder="Ф.И.О.">
+              <input class="input input-bd mb-2" type="text" placeholder="Телефон">
+              <input class="input input-bd mb-2" type="text" placeholder="Почта">
+              <textarea class="textarea textarea-bd mb-2" placeholder="Сообщение"> </textarea>
+            </div>
+            <div class="modal-footer ta-center">
+              <button class="btn btn--primary modal__btn" type="submit">Отправить</button>
+              <div class="modal-agree">Нажимая кнопку «Отправить» вы даете свое <br> согласие на обработку <a href="#">персональных данных.</a></div>
+            </div>
+          </form>
+        </div>
+        <div class="modal" id="razmForm">
+          <form class="modal-form" action="#">
+            <div class="modal-header">
+              <div class="title">Заявка на размещение <span>производства/предприятия</span></div>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <input class="input input-bd mb-2" type="text" placeholder="Ф.И.О.">
+                  <input class="input input-bd mb-2" type="tel" placeholder="Наименование организации ">
+                </div>
+                <div class="col-md-6">
+                  <input class="input input-bd mb-2" type="text" placeholder="Телефон">
+                  <label class="download mb-2">
+                    <input type="file">
+                    <div class="download__text">Загрузить документы</div>
+                    <div class="download__btn btn btn--shadow">
+                       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M18 0V4C18 4.53043 17.7893 5.03914 17.4142 5.41421C17.0391 5.78929 16.5304 6 16 6H2C1.46957 6 0.960859 5.78929 0.585786 5.41421C0.210714 5.03914 0 4.53043 0 4V0" transform="translate(1 13)" stroke="#1B2F36" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M0 0L5 5L10 0" transform="translate(5 8)" stroke="#1B2F36" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M0 12V0" transform="translate(10 1)" stroke="#1B2F36" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                    </div>
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <input class="input input-bd mb-2" type="text" placeholder="Вид производства">
+                </div>
+                <div class="col-md-6">
+                  <input class="input input-bd mb-2" type="text" placeholder="Отрасль производства">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="btn btn--shadow show-add-params">Все параметры</div>
+                </div>
+                <div class="col-md-6">
+                  <div class="mb-2">Предоставьте дополнительную <br> информацию</div>
+                </div>
+              </div>
+              <div class="add-params">
+                <div class="row">
+                  <div class="col-md-6">
+                    <input class="input input-bd mb-2" type="text" placeholder="ОГРН">
+                  </div>
+                  <div class="col-md-6">
+                    <input class="input input-bd mb-2" type="text" placeholder="ИНН">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <input class="input input-bd mb-2" type="email" placeholder="Почта">
+                  </div>
+                  <div class="col-md-6">
+                    <input class="input input-bd mb-2" type="text" placeholder="Адрес">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <input class="input input-bd mb-2" type="text" placeholder="Сумма инвестиций">
+                  </div>
+                  <div class="col-md-6">
+                    <input class="input input-bd mb-2" type="text" placeholder="Источник средств">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 mb-2">
+                    <select class="js-select">
+                      <option value="1">Тип площадки</option>
+                      <option value="2">lalala</option>
+                      <option value="3">lalala</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6 mb-2">
+                    <select class="js-select">
+                      <option value="1">Форма владения</option>
+                      <option value="2">lalala</option>
+                      <option value="3">lalala</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 mb-2">
+                    <label class="input-box">
+                      <div class="input-box__input">
+                        <input class="input input-bd" type="text" placeholder="га">
+                      </div>
+                      <div class="input-box__title">Площадь участка</div>
+                    </label>
+                  </div>
+                  <div class="col-md-6 mb-2">
+                    <label class="input-box">
+                      <div class="input-box__input">
+                        <input class="input input-bd" type="text" placeholder="кв.м">
+                      </div>
+                      <div class="input-box__title">Площадь сооружений <br> <span>при наличии</span></div>
+                    </label>
+                  </div>
+                </div>
+                <div class="modal-title">Инфраструктура</div>
+                <div class="row">
+                  <div class="col-md-6 mb-2">
+                    <label class="input-box">
+                      <div class="input-box__input">
+                        <input class="input input-bd" type="text" placeholder="куб. м/час">
+                      </div>
+                      <div class="input-box__title">Газ</div>
+                    </label>
+                  </div>
+                  <div class="col-md-6 mb-2">
+                    <label class="input-box">
+                      <div class="input-box__input">
+                        <input class="input input-bd" type="text" placeholder="Гкал/час">
+                      </div>
+                      <div class="input-box__title">Отопление</div>
+                    </label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 mb-2">
+                    <label class="input-box">
+                      <div class="input-box__input">
+                        <input class="input input-bd" type="text" placeholder="Бар">
+                      </div>
+                      <div class="input-box__title">Пар</div>
+                    </label>
+                  </div>
+                  <div class="col-md-6 mb-2">
+                    <label class="input-box">
+                      <div class="input-box__input">
+                        <input class="input input-bd" type="text" placeholder="кВт">
+                      </div>
+                      <div class="input-box__title">Электроэнергия</div>
+                    </label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 mb-2">
+                    <label class="input-box">
+                      <div class="input-box__input">
+                        <input class="input input-bd" type="text" placeholder="куб. м/год">
+                      </div>
+                      <div class="input-box__title">Водоснабжение</div>
+                    </label>
+                  </div>
+                  <div class="col-md-6 mb-2">
+                    <label class="input-box">
+                      <div class="input-box__input">
+                        <input class="input input-bd" type="text" placeholder="куб. м/год">
+                      </div>
+                      <div class="input-box__title">Канализация</div>
+                    </label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 mb-2">
+                    <label class="input-box">
+                      <div class="input-box__input">
+                        <input class="input input-bd" type="text" placeholder="куб. м/год">
+                      </div>
+                      <div class="input-box__title">Очистные сооружения</div>
+                    </label>
+                  </div>
+                  <div class="col-md-6 mb-2">
+                    <label class="input-box">
+                      <div class="input-box__checkbox">
+                        <div class="checkbox">
+                          <input class="checkbox__input" type="checkbox"><span class="checkbox__icon"></span>
+                        </div>
+                      </div>
+                      <div class="input-box__title">Наличие ЖД путей</div>
+                    </label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 mb-2">
+                    <input class="input input-bd" type="text" placeholder="Ближайший город">
+                  </div>
+                  <div class="col-md-6 mb-2">
+                    <label class="input-box">
+                      <div class="input-box__input">
+                        <input class="input input-bd" type="text" placeholder="км">
+                      </div>
+                      <div class="input-box__title">Расстояние до города</div>
+                    </label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 mb-2">
+                    <label class="input-box">
+                      <div class="input-box__input">
+                        <input class="input input-bd" type="text" placeholder="км">
+                      </div>
+                      <div class="input-box__title">Расстояние до магистрали</div>
+                    </label>
+                  </div>
+                </div>
+                <div class="modal-title">Дополнительно</div>
+                <div class="row">
+                  <div class="col-md-6 mb-2">
+                    <label class="input-box">
+                      <div class="input-box__checkbox">
+                        <div class="checkbox">
+                          <input class="checkbox__input" type="checkbox"><span class="checkbox__icon"></span>
+                        </div>
+                      </div>
+                      <div class="input-box__title">Возможность расширения</div>
+                    </label>
+                  </div>
+                  <div class="col-md-6 mb-2">
+                    <label class="input-box">
+                      <div class="input-box__checkbox">
+                        <div class="checkbox">
+                          <input class="checkbox__input" type="checkbox"><span class="checkbox__icon"></span>
+                        </div>
+                      </div>
+                      <div class="input-box__title">Наличие ограждений</div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer ta-center">
+              <div class="row">
+                <div class="col-md-6">
+                  <button class="btn btn--primary modal__btn" type="submit">Отправить</button>
+                </div>
+                <div class="col-md-6 ta-left">
+                  <div class="modal-agree">Нажимая кнопку «Отправить» вы даете свое <br> согласие на обработку <a href="#">персональных данных.</a></div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal" id="investForm">
+          <form class="modal-form" action="#">
+            <div class="modal-header">
+              <div class="title">Требуется <span>инвестиционная площадка</span></div>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <input class="input input-bd mb-2" type="text" placeholder="Ф.И.О.">
+                </div>
+                <div class="col-md-6">
+                  <input class="input input-bd mb-2" type="text" placeholder="Телефон">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <input class="input input-bd mb-2" type="text" placeholder="Почта">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-2">
+                  <select class="js-select">
+                    <option value="1">Район</option>
+                    <option value="2">lalala</option>
+                    <option value="3">lalala</option>
+                  </select>
+                </div>
+                <div class="col-md-6 mb-2">
+                  <select class="js-select">
+                    <option value="1">Тип площадки</option>
+                    <option value="2">lalala</option>
+                    <option value="3">lalala</option>
+                  </select>
+                </div>
+              </div>
+              <div class="modal-title">Инфраструктура</div>
+              <div class="row">
+                <div class="col-md-6 mb-2">
+                  <label class="input-box">
+                    <div class="input-box__checkbox">
+                      <div class="checkbox">
+                        <input class="checkbox__input" type="checkbox"><span class="checkbox__icon"></span>
+                      </div>
+                    </div>
+                    <div class="input-box__title">Газ</div>
+                  </label>
+                </div>
+                <div class="col-md-6 mb-2">
+                  <label class="input-box">
+                    <div class="input-box__checkbox">
+                      <div class="checkbox">
+                        <input class="checkbox__input" type="checkbox"><span class="checkbox__icon"></span>
+                      </div>
+                    </div>
+                    <div class="input-box__title">Отопление</div>
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-2">
+                  <label class="input-box">
+                    <div class="input-box__checkbox">
+                      <div class="checkbox">
+                        <input class="checkbox__input" type="checkbox"><span class="checkbox__icon"></span>
+                      </div>
+                    </div>
+                    <div class="input-box__title">Пар</div>
+                  </label>
+                </div>
+                <div class="col-md-6 mb-2">
+                  <label class="input-box">
+                    <div class="input-box__checkbox">
+                      <div class="checkbox">
+                        <input class="checkbox__input" type="checkbox"><span class="checkbox__icon"></span>
+                      </div>
+                    </div>
+                    <div class="input-box__title">Электроэнергия</div>
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-2">
+                  <label class="input-box">
+                    <div class="input-box__checkbox">
+                      <div class="checkbox">
+                        <input class="checkbox__input" type="checkbox"><span class="checkbox__icon"></span>
+                      </div>
+                    </div>
+                    <div class="input-box__title">Водоснабжение</div>
+                  </label>
+                </div>
+                <div class="col-md-6 mb-2">
+                  <label class="input-box">
+                    <div class="input-box__checkbox">
+                      <div class="checkbox">
+                        <input class="checkbox__input" type="checkbox"><span class="checkbox__icon"></span>
+                      </div>
+                    </div>
+                    <div class="input-box__title">Канализация</div>
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-2">
+                  <label class="input-box">
+                    <div class="input-box__checkbox">
+                      <div class="checkbox">
+                        <input class="checkbox__input" type="checkbox"><span class="checkbox__icon"></span>
+                      </div>
+                    </div>
+                    <div class="input-box__title">Очистные сооружения</div>
+                  </label>
+                </div>
+                <div class="col-md-6 mb-2">
+                  <div class="input-box">
+                    <div class="input-box__input">
+                      <input class="input input-bd" type="text" placeholder="км">
+                    </div>
+                    <div class="input-box__title">До автомагистрали</div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-title">Дополнительно</div>
+              <div class="row">
+                <div class="col-md-6 mb-2">
+                  <label class="input-box">
+                    <div class="input-box__checkbox">
+                      <div class="checkbox">
+                        <input class="checkbox__input" type="checkbox"><span class="checkbox__icon"></span>
+                      </div>
+                    </div>
+                    <div class="input-box__title">Возможность расширения</div>
+                  </label>
+                </div>
+                <div class="col-md-6 mb-2">
+                  <label class="download">
+                    <input type="file">
+                    <div class="download__text">Загрузить документы</div>
+                    <div class="download__btn btn btn--shadow">
+                       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M18 0V4C18 4.53043 17.7893 5.03914 17.4142 5.41421C17.0391 5.78929 16.5304 6 16 6H2C1.46957 6 0.960859 5.78929 0.585786 5.41421C0.210714 5.03914 0 4.53043 0 4V0" transform="translate(1 13)" stroke="#1B2F36" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M0 0L5 5L10 0" transform="translate(5 8)" stroke="#1B2F36" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M0 12V0" transform="translate(10 1)" stroke="#1B2F36" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                    </div>
+                  </label>
+                </div>
+                <div class="col-md-12 mb-2">
+                  <textarea class="textarea textarea-bd" placeholder="Дополнительные условия"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer ta-center">
+              <div class="row">
+                <div class="col-md-6">
+                  <button class="btn btn--primary modal__btn" type="submit">Отправить</button>
+                </div>
+                <div class="col-md-6 ta-left">
+                  <div class="modal-agree">Нажимая кнопку «Отправить» вы даете свое <br> согласие на обработку <a href="#">персональных данных.</a></div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal" id="predlForm">
+          <form class="modal-form" action="#">
+            <div class="modal-header">
+              <div class="title">Предложить <span>инвестиционную площадку</span></div>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <input class="input input-bd mb-2" type="text" placeholder="Ф.И.О.">
+                </div>
+                <div class="col-md-6">
+                  <input class="input input-bd mb-2" type="text" placeholder="Телефон">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <input class="input input-bd mb-2" type="text" placeholder="Почта">
+                </div>
+                <div class="col-md-6">
+                  <input class="input input-bd mb-2" type="text" placeholder="Адрес площадки ">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-2">
+                  <select class="js-select">
+                    <option value="1">Тип площадки</option>
+                    <option value="2">lalala</option>
+                    <option value="3">lalala</option>
+                  </select>
+                </div>
+                <div class="col-md-6 mb-2">
+                  <select class="js-select">
+                    <option value="1">Форма владения</option>
+                    <option value="2">lalala</option>
+                    <option value="3">lalala</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-2">
+                  <label class="input-box">
+                    <div class="input-box__input">
+                      <input class="input input-bd" type="text" placeholder="га">
+                    </div>
+                    <div class="input-box__title">Площадь участка</div>
+                  </label>
+                </div>
+                <div class="col-md-6 mb-2">
+                  <label class="input-box">
+                    <div class="input-box__input">
+                      <input class="input input-bd" type="text" placeholder="кв.м">
+                    </div>
+                    <div class="input-box__title">Площадь сооружений <br> <span>при наличии</span></div>
+                  </label>
+                </div>
+              </div>
+              <div class="modal-title">Инфраструктура</div>
+              <div class="row">
+                <div class="col-md-6 mb-2">
+                  <label class="input-box">
+                    <div class="input-box__input">
+                      <input class="input input-bd" type="text" placeholder="куб. м/час">
+                    </div>
+                    <div class="input-box__title">Газ</div>
+                  </label>
+                </div>
+                <div class="col-md-6 mb-2">
+                  <label class="input-box">
+                    <div class="input-box__input">
+                      <input class="input input-bd" type="text" placeholder="Гкал/час">
+                    </div>
+                    <div class="input-box__title">Отопление</div>
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-2">
+                  <label class="input-box">
+                    <div class="input-box__input">
+                      <input class="input input-bd" type="text" placeholder="Бар">
+                    </div>
+                    <div class="input-box__title">Пар</div>
+                  </label>
+                </div>
+                <div class="col-md-6 mb-2">
+                  <label class="input-box">
+                    <div class="input-box__input">
+                      <input class="input input-bd" type="text" placeholder="кВт">
+                    </div>
+                    <div class="input-box__title">Электроэнергия</div>
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-2">
+                  <label class="input-box">
+                    <div class="input-box__input">
+                      <input class="input input-bd" type="text" placeholder="куб. м/год">
+                    </div>
+                    <div class="input-box__title">Водоснабжение</div>
+                  </label>
+                </div>
+                <div class="col-md-6 mb-2">
+                  <label class="input-box">
+                    <div class="input-box__input">
+                      <input class="input input-bd" type="text" placeholder="куб. м/год">
+                    </div>
+                    <div class="input-box__title">Канализация</div>
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-2">
+                  <label class="input-box">
+                    <div class="input-box__input">
+                      <input class="input input-bd" type="text" placeholder="куб. м/год">
+                    </div>
+                    <div class="input-box__title">Очистные сооружения</div>
+                  </label>
+                </div>
+                <div class="col-md-6 mb-2">
+                  <label class="input-box">
+                    <div class="input-box__checkbox">
+                      <div class="checkbox">
+                        <input class="checkbox__input" type="checkbox"><span class="checkbox__icon"></span>
+                      </div>
+                    </div>
+                    <div class="input-box__title">Наличие ЖД путей</div>
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-2">
+                  <input class="input input-bd" type="text" placeholder="Ближайший город">
+                </div>
+                <div class="col-md-6 mb-2">
+                  <label class="input-box">
+                    <div class="input-box__input">
+                      <input class="input input-bd" type="text" placeholder="км">
+                    </div>
+                    <div class="input-box__title">Расстояние до города</div>
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-2">
+                  <label class="input-box">
+                    <div class="input-box__input">
+                      <input class="input input-bd" type="text" placeholder="км">
+                    </div>
+                    <div class="input-box__title">Расстояние до магистрали</div>
+                  </label>
+                </div>
+              </div>
+              <div class="modal-title">Дополнительно</div>
+              <div class="row">
+                <div class="col-md-6 mb-2">
+                  <label class="input-box">
+                    <div class="input-box__checkbox">
+                      <div class="checkbox">
+                        <input class="checkbox__input" type="checkbox"><span class="checkbox__icon"></span>
+                      </div>
+                    </div>
+                    <div class="input-box__title">Возможность расширения</div>
+                  </label>
+                </div>
+                <div class="col-md-6 mb-2">
+                  <label class="input-box">
+                    <div class="input-box__checkbox">
+                      <div class="checkbox">
+                        <input class="checkbox__input" type="checkbox"><span class="checkbox__icon"></span>
+                      </div>
+                    </div>
+                    <div class="input-box__title">Наличие ограждений</div>
+                  </label>
+                </div>
+                <div class="col-md-6 mb-2">
+                  <label class="download">
+                    <input type="file">
+                    <div class="download__text">Загрузить документы</div>
+                    <div class="download__btn btn btn--shadow">
+                       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M18 0V4C18 4.53043 17.7893 5.03914 17.4142 5.41421C17.0391 5.78929 16.5304 6 16 6H2C1.46957 6 0.960859 5.78929 0.585786 5.41421C0.210714 5.03914 0 4.53043 0 4V0" transform="translate(1 13)" stroke="#1B2F36" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M0 0L5 5L10 0" transform="translate(5 8)" stroke="#1B2F36" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M0 12V0" transform="translate(10 1)" stroke="#1B2F36" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer ta-center">
+              <div class="row">
+                <div class="col-md-6">
+                  <button class="btn btn--primary modal__btn" type="submit">Отправить</button>
+                </div>
+                <div class="col-md-6 ta-left">
+                  <div class="modal-agree">Нажимая кнопку «Отправить» вы даете свое <br> согласие на обработку <a href="#">персональных данных.</a></div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="popups-nav disable">
+        <div class="popups-nav__toggler"></div>
+        <div class="popups-nav__list">
+          <div class="popups-nav__item"><a class="btn btn--primary fancybox" href="#consultForm">Получить консультацию</a></div>
+          <div class="popups-nav__item"><a class="btn btn--primary fancybox" href="#razmForm">Размещение производства/предприятия</a></div>
+          <div class="popups-nav__item"><a class="btn btn--primary fancybox" href="#predlForm">Предложить инвестиционную площадку</a></div>
+          <div class="popups-nav__item"><a class="btn btn--primary fancybox" href="#investForm">Требуется инвестиционная площадка</a></div>
         </div>
       </div>
     </div>
     <!--scripts =================================================-->
     <script src="libs/jquery/dist/jquery.min.js"></script>
     <script src="libs/owl.carousel/dist/owl.carousel.min.js"></script>
+    <script src="libs/select2/dist/js/select2.min.js"></script>
     <script src="libs/fancybox/dist/jquery.fancybox.min.js"></script>
     <script src="js/custom.js"></script>
   </body>
